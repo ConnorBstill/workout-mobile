@@ -1,0 +1,131 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  height: 85px;
+  justify-content: space-between;
+  margin-bottom: 35px;
+
+  h4 {
+    margin-bottom: 14px;
+  }
+
+  .workout-timer {
+    color: #75706b;
+    display: inline;
+    font-size: 12px;
+  }
+
+  ion-button {
+    font-size: 12px;
+    height: 35px;
+    width: auto;
+  }
+}
+
+.exercise-item {
+  align-items: center;
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  height: 38px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 12px;
+  width: 100%;
+
+  p {
+    display: inline;
+    font-size: 12px;
+  }
+
+  .exercise-intervals-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+
+    .exercise-intervals {
+      color: #75706b;
+    }
+  }
+}
+
+.exercise-item-expanded {
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  padding-top: 9px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+  padding-left: 12px;
+
+  .exercise-intervals-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+
+    .exercise-intervals {
+      color: #75706b;
+    }
+  }
+
+  .expanded-exercise-name {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    p {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .set-section {
+    .set-row,
+    .rest-row {
+      align-items: center;
+      border-bottom: 1px solid #c9c9c9;
+      display: flex;
+      height: 35px;
+      justify-content: space-between;
+      margin: 0;
+      padding: 5px;
+      padding-right: 0px;
+
+      .set-text,
+      .rest-text {
+        // border-bottom: 1px solid #C9C9C9;
+        color: #75706b;
+        display: inline;
+        font-size: 10px;
+        margin: 0;
+      }
+
+      ion-button {
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+
+    .next-button {
+      font-size: 13px;
+      width: 48px;
+      height: 24px;
+    }
+  }
+
+  .bold-orange {
+    font-weight: bold;
+    color: #fb6107;
+  }
+}

@@ -1,0 +1,14 @@
+<div id="hidden-image-upload-container">
+  <input 
+    #inputElement 
+    id="image-file" 
+    (change)="handleImageChange(inputElement)" 
+    type="file" 
+    name="media">
+  
+  <label 
+    id="image-input-label" 
+    class="button"
+    [class.disabled]="loading"
+    for="image-file">{{ loading ? 'Uploading...' : text }}</label>
+</div>

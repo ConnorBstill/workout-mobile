@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true">
+
+  <div class="padding">
+    <div class="header-container">
+      <div>
+        <h4 class="mt-4">{{ workout.name }}</h4>
+
+        <p *ngIf="workoutInProgress" class="workout-timer">
+          {{ workoutTimerSeconds * 1000 | date: 'mm:ss' }}
+        </p>
+      </div>
+
+      <ion-button *ngIf="!workoutInProgress" (click)="startWorkout()">Start</ion-button>
+
+      <ion-button *ngIf="workoutInProgress" (click)="finishWorkout()" fill="outline">Finish Early</ion-button>
+    </div>
+
+    <div *ngFor="let exercise of exercises; let i = index">
+      <div *ngIf="currentExerciseIndex !== i" class="exercise-item">
+        <p class="exercise-name">{{ exercise.name }}</p>
+  
+        <div class="exercise-intervals-container">
+          <p class="exercise-intervals">{{ exercise.sets }}x{{ exercise.repsPerSet }}</p>
+          <p class="exercise-intervals">{{ exercise.restTime }}s rest</p>
+        </div>
+      </div>
+
+      <div *ngIf="currentExerciseIndex === i" class="exercise-item-expanded">
+        <div class="expanded-exercise-name">
+          <p class="exercise-name">{{ exercise.name }}</p>
+          
+          <div class="exercise-intervals-container">
+            <p class="exercise-intervals">{{ exercise.sets }}x{{ exercise.repsPerSet }}</p>
+            <p class="exercise-intervals">{{ exercise.restTime }}s rest</p>
+          </div>
+        </div>
+
+        <div class="set-section">
+          <div *ngFor="let set of currentExerciseSets; let setIndex = index">
+            <div class="set-row">
+              <p 
+                class="set-text"
+                [class.bold-orange]="set.setActive">
+                Set {{ setIndex + 1 }}{{ 
+                  set.setActive ? currentSetTimerText() : ''
+                }}
+              </p>
+              <ion-button 
+                *ngIf="set.setActive"
+                (click)="goToNextSet()"
+                class="next-button" 
+                fill="outline">Next</ion-button>
+            </div>
+
+            <div 
+              class="rest-row" 
+              [style.border-bottom]="setIndex < currentExerciseSets.length - 1 ? '1px solid #C9C9C9' : ''">
+              <p 
+                class="rest-text"
+                [class.bold-orange]="set.restActive">
+                Rest{{ 
+                  set.restActive ? currentSetTimerText() : ''
+                }}
+              </p>
+
+              <ion-button 
+                *ngIf="set.restActive"
+                (click)="goToNextSet()"
+                class="next-button"
+                fill="outline">Next</ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

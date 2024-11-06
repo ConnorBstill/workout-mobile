@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  <h1 class="my-5">Log in</h1>
+
+  <div class="padding">
+    <form [formGroup]="loginForm">
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    
+      <ion-label>Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </form>
+  
+    <ion-button 
+      (click)="handleLoginClick()"
+      expand="block"
+      class="my-3">Log in</ion-button>
+
+    <ion-button
+      id="google-sign-in"
+      fill="outline" 
+      expand="block">
+      <ion-icon name="logo-google"></ion-icon>
+      Sign in with Google
+    </ion-button>
+  
+    <p>Don't have an account? <a (click)="router.navigate(['/register'])">Create one here</a>
+  </div>
+</ion-content>

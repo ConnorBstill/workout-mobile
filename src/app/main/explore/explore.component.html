@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+
+  <div class="padding">
+    <h4 class="mt-4">Explore</h4>
+
+    <div class="criteria-inputs-container">
+      <div class="criteria-input-container">
+        <ion-label>Muscle groups</ion-label>
+        <ion-select (ionChange)="selectMuscleGroup($event)" okText="Select">
+          <ion-select-option [value]="1">Chest</ion-select-option>
+          <ion-select-option [value]="2">Abs</ion-select-option>
+          <ion-select-option [value]="3">Biceps</ion-select-option>
+        </ion-select>
+      </div>
+
+      <div class="criteria-input-container">
+        <ion-label>Equipment</ion-label>
+        <ion-select (ionChange)="selectEquipment($event)" okText="Select">
+          <ion-select-option [value]="4">Bodyweight (none)</ion-select-option>
+          <ion-select-option [value]="1">Barbell</ion-select-option>
+          <ion-select-option [value]="2">Dumbbell</ion-select-option>
+        </ion-select>
+      </div>
+    </div>
+
+    <div>
+      <ion-label>Workouts</ion-label>
+    </div>
+
+    <div>
+      <ion-label>Exercises</ion-label>
+
+      <div *ngFor="let exercise of exerciseResults" class="exercise-item">
+        {{ exercise.name }}
+
+        <ion-icon></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,67 @@
+.workout-container {
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  .workout-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .workout-date {
+      font-size: 12px;
+      margin-top: 0;
+    }
+
+    #delete-workout-menu-button {
+      background-color: #fff;
+    }
+  }
+
+  .workout-description-container {
+    margin-bottom: 10px;
+
+    .workout-description-line {
+      color: #75706b;
+      font-size: 12px;
+      margin-bottom: 0;
+      margin-top: 8px;
+    }
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+
+    .workout-buttons {
+      height: 30px;
+      width: 60px;
+    }
+  }
+}
+
+#add-workout-fab {
+  background-color: #fb6107;
+  border-radius: 50%;
+  bottom: 12%;
+  box-shadow: 0 3px 6px 1px rgba(251, 97, 7, 0.3);
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  height: 48px;
+  position: fixed;
+  right: 5%;
+  width: 48px;
+  z-index: 10;
+
+  ion-icon {
+    font-size: 50px;
+  }
+}
+
+.padding {
+  padding-bottom: 28%;
+}

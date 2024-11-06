@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true" class="padding">
+  <h1 class="my-5">Registration</h1>
+
+  <div class="padding">
+    <ng-container *ngIf="section === 'loginForm'">
+      <form [formGroup]="registrationForm">
+        <ion-label>Email address</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      
+        <ion-label>Password</ion-label>
+        <ion-input 
+          formControlName="password"
+          type="password"></ion-input>
+      
+        <ion-label>Retype your password</ion-label>
+        <ion-input 
+          formControlName="retypePassword"
+          type="password"></ion-input>
+      </form>
+
+      <p *ngIf="invalidPasswordMessage" class="error-message">{{ invalidPasswordMessage }}</p>
+      <p *ngIf="passwordsDoNotMatchMessage" class="error-message">{{ passwordsDoNotMatchMessage }}</p>
+      
+      <ion-button 
+        (click)="submit()"
+        expand="block"
+        [disabled]="!!(this.invalidPasswordMessage + this.passwordsDoNotMatchMessage)">Register</ion-button>
+    
+      <p class="my-5"><a (click)="router.navigate(['/login'])">Click here</a> to log in</p>
+    </ng-container>
+  
+    <!-- <ng-container *ngIf="section === 'checkEmailInbox'">
+      <p>Your information has been submitted. Please check your email inbox for further instructions.</p>
+    </ng-container>
+  
+    <ng-container *ngIf="section === 'requestSubmitted'">
+      <p>Your information has been submitted. We will review your request and send you an email in the next 2 to 5 business days.</p>
+    </ng-container> -->
+
+  </div>
+</ion-content>

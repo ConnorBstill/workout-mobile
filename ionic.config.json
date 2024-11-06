@@ -1,0 +1,7 @@
+{
+  "name": "workoutcenter-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+
+  <div class="padding">
+    <div class="header-container">
+      <h4 class="mt-4">Create Workout</h4>
+
+      <ion-button (click)="createWorkout()">Create</ion-button>
+    </div>
+
+    <ion-label>Workout name</ion-label>
+    <ion-input #workoutNameInput></ion-input>
+
+    <h4>Exercises</h4>
+
+    <div *ngFor="let exercise of exercises; let i = index" class="exercise-item">
+      <div class="exercise-name-container">
+        <ion-icon name="reorder-four-outline" class="margin-right medium-icon"></ion-icon>
+
+        <p class="exercise-name">{{ exercise.name }}</p>
+      </div>
+
+      <div class="exercise-details-container">
+        <p class="exercise-details-text margin-right">{{ exercise.repsPerSet }}x{{ exercise.sets }}</p>
+
+        <p class="exercise-details-text margin-right">{{ exercise.restTime }}s rest</p>
+
+        <ion-icon 
+          (click)="openEditExercise(i)" name="pencil-sharp" 
+          class=" margin-right smaller-icon"></ion-icon>
+
+        <ion-icon (click)="deleteExercise(i)" name="trash" class="smaller-icon"></ion-icon>
+      </div>
+    </div>
+
+    <form class="example-form">
+      <input 
+        type="text" 
+        matInput 
+        [formControl]="searchFormControl" 
+        [matAutocomplete]="auto">
+
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option 
+          *ngFor="let suggestion of filteredSuggestions | async"
+          (click)="addExercise(suggestion.name)"
+          [value]="suggestion">
+          {{ suggestion.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </form> 
+    
+
+    <ion-button (click)="addExercise()" fill="outline">Add Exercise</ion-button>
+  </div>
+</ion-content>

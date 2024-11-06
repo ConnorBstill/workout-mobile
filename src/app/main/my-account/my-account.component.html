@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+
+  <div class="padding">
+    <h1 class="my-4">My Account</h1>
+
+    <ion-label>Email</ion-label>
+    <ion-input id="email-input"></ion-input>
+
+    <hr>
+
+    <ion-label>New password</ion-label>
+    <ion-input class="password-input"></ion-input>
+
+    <ion-label>Retype your password</ion-label>
+    <ion-input class="password-input"></ion-input>
+
+    <hr>
+
+    <ion-button
+      (click)="logout()"
+      id="logout-button" 
+      fill="outline" 
+      color="danger" 
+      expand="block">Log Out</ion-button>
+  </div>
+</ion-content>

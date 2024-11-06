@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="padding">
+  <h1 class="my-5">Registration</h1>
+
+  <p>Enter your organization’s information.</p>
+
+  <form [formGroup]="registrationForm">
+    <ion-label>Your name</ion-label>
+    <ion-input formControlName="userName"></ion-input>
+
+    <ion-label>Organization name</ion-label>
+    <ion-input formControlName="organizationName"></ion-input>
+
+    <ion-label>Mobile phone number</ion-label>
+    <ion-input formControlName="mobilePhoneNumber"></ion-input>
+
+    <ion-label>Address line 1</ion-label>
+    <ion-input formControlName="addressLine1"></ion-input>
+
+    <ion-label>Address line 2</ion-label>
+    <ion-input formControlName="addressLine2"></ion-input>
+
+    <ion-label>City</ion-label>
+    <ion-input formControlName="addressCity"></ion-input>
+
+    <ion-label>State</ion-label>
+    <ion-input formControlName="addressState"></ion-input>
+
+    <ion-label>Postal code</ion-label>
+    <ion-input formControlName="addressPostalCode"></ion-input>
+  </form>
+
+  <ion-button 
+    (click)="submit()"
+    expand="block">Submit</ion-button>
+
+  <p class="my-5"><a (click)="router.navigate(['/login'])">Click here</a> to register</p>
+</ion-content>

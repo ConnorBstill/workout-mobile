@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Search Exercises</h2>
+
+<div class="dialog-content">
+  <!-- <ion-label>Muscle groups</ion-label> -->
+  <mat-select>
+    <mat-option>Abs</mat-option>
+    <mat-option>Biceps</mat-option>
+    <mat-option>Chest</mat-option>
+  </mat-select>
+  <!-- <ion-select (ionChange)="selectEquipment($event)" okText="Select">
+    <ion-select-option>Abs</ion-select-option>
+    <ion-select-option>Biceps</ion-select-option>
+    <ion-select-option>Chest</ion-select-option>
+  </ion-select> -->
+
+  <!-- <ion-label>Equipment</ion-label> -->
+  <!-- <ion-select 
+    (ionChange)="selectEquipment($event)" okText="Select">
+    <ion-select-option>Bodyweight (none)</ion-select-option>
+    <ion-select-option>Barbell</ion-select-option>
+    <ion-select-option>Dumbbell</ion-select-option>
+  </ion-select> -->
+</div>
+
+<mat-dialog-actions align="end">
+  <ion-button
+    mat-dialog-close 
+    fill="outline">Cancel</ion-button>
+
+  <ion-button
+    [mat-dialog-close]="data">Save</ion-button>
+</mat-dialog-actions>

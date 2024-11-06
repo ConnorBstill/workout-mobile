@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Edit Exercise</h2>
+
+<div class="dialog-content">
+  <ion-label>Number of sets</ion-label>
+  <ion-input #setsInput [value]="data.sets"></ion-input>
+
+  <ion-label>Number of reps</ion-label>
+  <ion-input #repsInput [value]="data.repsPerSet"></ion-input>
+
+  <ion-label>Weight</ion-label>
+  <ion-input #weightInput [value]="data.weight"></ion-input>
+
+  <ion-label>Rest time between sets</ion-label>
+  <ion-input #restInput [value]="data.restTime"></ion-input>
+</div>
+
+<mat-dialog-actions align="end">
+  <ion-button
+    (click)="cancel()"
+    mat-dialog-close 
+    fill="outline">Cancel</ion-button>
+
+  <ion-button
+    (click)="close()"
+    [mat-dialog-close]="data">Save</ion-button>
+</mat-dialog-actions>
