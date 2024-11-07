@@ -1,25 +1,25 @@
 // Custom Theming for Angular Material
+@use '~@angular/material' as mat;
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$app-primary: mat-palette($mat-indigo);
-$app-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-primary: mat.define-palette(mat.$indigo-palette);
+$app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$app-warn: mat-palette($mat-red);
+$app-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$app-theme: mat-light-theme(
+$app-theme: mat.define-light-theme(
   (
     color: (
       primary: $app-primary,
@@ -32,7 +32,7 @@ $app-theme: mat-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($app-theme);
+@include mat.all-component-themes($app-theme);
 
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
@@ -119,10 +119,7 @@ $app-theme: mat-light-theme(
 }
 
 // @media (prefers-color-scheme: dark) {
-//   /*
-//    * Dark Colors
-//    * -------------------------------------------
-//    */
+//   __<<ngThemingMigrationEscapedComment10>>__
 
 //   body {
 //     --ion-color-primary: #428cff;
@@ -189,10 +186,7 @@ $app-theme: mat-light-theme(
 //     --ion-color-light-tint: #383a3e;
 //   }
 
-//   /*
-//    * iOS Dark Theme
-//    * -------------------------------------------
-//    */
+//   __<<ngThemingMigrationEscapedComment11>>__
 
 //   .ios body {
 //     --ion-background-color: #000000;
@@ -228,10 +222,7 @@ $app-theme: mat-light-theme(
 //     --ion-card-background: #1c1c1d;
 //   }
 
-//   /*
-//    * Material Design Dark Theme
-//    * -------------------------------------------
-//    */
+//   __<<ngThemingMigrationEscapedComment12>>__
 
 //   .md body {
 //     --ion-background-color: #121212;
